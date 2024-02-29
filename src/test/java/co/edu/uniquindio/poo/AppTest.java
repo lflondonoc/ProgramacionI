@@ -20,7 +20,7 @@ public class AppTest {
     private static final Logger LOG = Logger.getLogger(AppTest.class.getName());
 
     /**
-     * Prueba para verificar los datos completos 
+     * Prueba para verificar los datos completos de un estudiante
      */
     @Test
     public void datosCompletos() {
@@ -38,7 +38,9 @@ public class AppTest {
         
         LOG.info("Finalizando test datosCompletos");
     }
-
+    /**
+     * Prueba para verificar que los datos de un estudiante no sean nulos
+     */
     @Test
     public void datosNulos() {
         LOG.info("Iniciando test datosNulos");
@@ -47,7 +49,9 @@ public class AppTest {
         
         LOG.info("Finalizando test datosNulos");
     }
-
+/**
+ * Prueba para verificar que los datos de un estudiante no esten vacios
+ */
     @Test
     public void datosVacios() {
         LOG.info("Iniciando test datosVacios");
@@ -56,6 +60,9 @@ public class AppTest {
         
         LOG.info("Finalizando test datosVacios");
     }
+    /**
+     * Prueba para verificar que la edad de un estudiante no sea negativa
+     */
     @Test
     public void edadNegativa() {
         LOG.info("Iniciando test edadNegativa");
@@ -64,6 +71,9 @@ public class AppTest {
         
         LOG.info("Finalizando test edadNegativa");
     }
+    /**
+     * Prueba para verificar que el correo de un estudiante no se válido
+     */
     @Test
     public void correoNoValido() {
         LOG.info("Iniciando test correoNoValido");
