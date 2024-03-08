@@ -1,14 +1,17 @@
 package co.edu.uniquindio.poo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.Collection;
+import java.util.List;
 import java.util.logging.Logger;
 import org.junit.jupiter.api.Test;
 
 public class CursoTest {
-    private static final Logger LOG = Logger.getLogger(AppTest.class.getName());
+    private static final Logger LOG = Logger.getLogger(EstudianteTest.class.getName());
 
     /**
      * prueba para verificar los datos completos del curso
@@ -60,5 +63,23 @@ public class CursoTest {
 
         LOG.info("Finalizando test agregarEstudianteRepetido");
     }
+    @Test
+    public void estudiantesMayoresEdad(){
+        LOG.info("Iniciando test estudiantesMayoresEdad");
 
+        Curso curso= new Curso("Programación I");
+        Estudiante maria= new Estudiante("Maria", "Lopez", "1098362581", "maria@uniquindio.edu.co", "31425171", (byte)22);
+        Estudiante camila = new Estudiante("Camila", "Alzate Rios", "109453264", "camila@uniquindio.edu.co", "315635674",(byte) 17);
+        Estudiante rodrigo = new Estudiante("Rodrigo", "Calderon", "109453269", "rodrigo@uniquindio.edu.co", "3223451278",(byte) 19);
+
+        curso.agregarEstudiante(maria);
+        curso.agregarEstudiante(camila);
+        curso.agregarEstudiante(rodrigo);
+        
+        Collection<Estudiante> listaMayores = List.of(maria,rodrigo);
+        assertIterableEquals(listaMayores, curso.identificarMayoresEdad());
+
+        LOG.info("Finalizando test estudiantesMayoresEdad");
+    }
+    
 }

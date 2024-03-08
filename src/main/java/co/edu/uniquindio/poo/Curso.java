@@ -1,6 +1,7 @@
 package co.edu.uniquindio.poo;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Collection;
 
 public class Curso {
@@ -27,11 +28,21 @@ public class Curso {
         return bandera;
     }
 
+    
     public String getNombre() {
         return nombre;
     }
     public Collection<Estudiante> getEstudiantes() {
         return estudiantes;
     }
-    
+
+    public Collection<Estudiante> identificarMayoresEdad (){
+        List<Estudiante> mayoresEdad = new LinkedList<>();
+        for (Estudiante estudiante: estudiantes){
+            if (estudiante.edad() >= 18){
+                mayoresEdad.add(estudiante);
+            }
+        }
+        return mayoresEdad;
+    } 
 }
